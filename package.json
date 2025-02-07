@@ -32,8 +32,6 @@
     "@stylistic/eslint-plugin-plus": "^3.0.0",
     "coralite": "^0.5.0",
     "eslint": "^9.19.0",
-    "hyper-express": "^6.17.3",
-    "live-directory": "^3.0.3",
     "nodemon": "^3.1.9",
     "npm-run-all2": "^7.0.2",
     "postcss": "^8.5.1",
