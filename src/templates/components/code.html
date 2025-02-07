@@ -114,7 +114,10 @@
     if (node.children) {
       const lastIndex = node.children.length - 1
       let removeSpace = false
-      separator.space += '  '
+
+      if (node.name !== 'html') {
+        separator.space += '  '
+      }
 
       for (let i = 0; i < node.children.length; i++) {
         const childNode = node.children[i];
