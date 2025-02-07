@@ -3,10 +3,13 @@
   "version": "0.0.0",
   "description": "The Coralite website",
   "private": true,
+  "type": "module",
   "scripts": {
-    "assets": "node scripts/assets.js",
-    "build": "npm-run-all assets html css",
-    "css": "stylelint src/css",
+    "assets": "node scripts/public.js",
+    "build": "npm-run-all assets css html",
+    "css": "npm-run-all css-lint css-compile",
+    "css-lint": "stylelint --fix src/css",
+    "css-compile": "postcss src/css -d dist/assets/css",
     "html": "NODE_OPTIONS=--experimental-vm-modules coralite -t src/templates -p src/pages -o dist",
     "server": "sirv dist --dev --no-clear --port 3000",
     "start": "npm-run-all --parallel watch server",
@@ -21,13 +24,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tjdav/coralite.io.git"
+    "url": "https://github.com/tjdav/coralite-io.git"
   },
   "license": "AGPL-3.0-only",
   "devDependencies": {
-    "coralite": "^0.4.1",
+    "@stylistic/eslint-plugin-js": "^3.0.0",
+    "@stylistic/eslint-plugin-plus": "^3.0.0",
+    "coralite": "^0.5.0",
+    "eslint": "^9.19.0",
+    "hyper-express": "^6.17.3",
+    "live-directory": "^3.0.3",
     "nodemon": "^3.1.9",
     "npm-run-all2": "^7.0.2",
+    "postcss": "^8.5.1",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
     "sirv-cli": "^3.0.0",
     "stylelint": "^16.14.1",
     "stylelint-config-twbs-bootstrap": "^15.1.0"
