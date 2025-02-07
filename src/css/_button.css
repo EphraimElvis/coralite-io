@@ -1,0 +1,28 @@
+.button {
+  display: inline-block;
+  padding: var(--padding-y) var(--padding-x);
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--border-radius);
+  transition: background-color 250ms;
+}
+
+.button-primary {
+  color: var(--dark);
+  background-color: var(--primary);
+
+  &:hover {
+    background-color: hsl(from var(--primary) h s 40%);
+  }
+}
+
+
+.button-secondary {
+  color: var(--light);
+  background-color: var(--secondary);
+
+  &:hover {
+    background-color: hsl(from var(--secondary) h s 40%);
+  }
+}

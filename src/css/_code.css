@@ -1,0 +1,62 @@
+.code {
+  --code-colour-light: #292e33;
+  --code-colour-dark: #a9bacb;
+  --code-colour-alt-light: #585959;
+  --code-colour-alt-dark: #b6babf;
+  --code-toolbar-light: #f0f1f2;
+  --code-toolbar-dark: #343c45;
+  --code-body-light: #fcfcfc;
+  --code-body-dark: #14171a;
+  --code-comment-light: #747573;
+  --code-comment-dark: #5c6773;
+  --code-blue-light: #08c;
+  --code-blue-dark: #46afe3;
+  --code-pink-light: #b82ee5;
+  --code-pink-dark: #ff7de9;
+  --code-purple-light: #8f4aff;
+  --code-purple-dark: #b98eff;
+  color: light-dark(var(--code-colour-light), var(--code-colour-dark));
+}
+
+.code-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacer-1) var(--spacer-2);
+  background-color: light-dark(var(--code-toolbar-light), var(--code-toolbar-dark));
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+
+.code-language {
+  font-weight: 700;
+}
+
+.code-body {
+  margin: 0;
+  overflow-x: auto;
+  font-family: "Fira code", "Courier New", Courier, monospace;
+  background-color: light-dark(var(--code-body-light), var(--code-body-dark));
+  border-bottom-right-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+}
+
+.html-comment {
+  color: light-dark(var(--code-comment-light), var(--code-comment-dark));
+}
+
+.html-tag-text {
+  color: light-dark(var(--code-colour-alt-light), var(--code-colour-alt-dark));
+}
+
+.html-tag-name {
+  color: light-dark(var(--code-blue-light), var(--code-blue-dark));
+}
+
+.html-attr-name {
+  color: light-dark(var(--code-pink-light), var(--code-pink-dark));
+}
+
+.html-attr-value {
+  color: light-dark(var(--code-purple-light), var(--code-purple-dark));
+}

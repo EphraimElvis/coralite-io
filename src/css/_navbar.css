@@ -1,0 +1,27 @@
+.navbar {
+  background-color: var(--secondary);
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--padding-y) var(--spacer-4);
+  }
+}
+
+.navbar-logo {
+  height: 42px;
+}
+
+.navbar-brand {
+  display: inherit;
+}
+
+.nav-link {
+  font-weight: 600;
+  text-decoration-color: var(--primary);
+
+  &:hover {
+    text-decoration-color: hsl(from var(--primary) h 60% l);
+  }
+}

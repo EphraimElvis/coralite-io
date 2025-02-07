@@ -1,0 +1,11 @@
+.top-bar {
+  display: flex;
+  justify-content: space-around;
+  color: var(--light);
+  background-color: var(--dark);
+  background-image: var(--gradient-dark);
+
+  img {
+    height: 100px;
+  }
+}
