@@ -33,12 +33,17 @@
 }
 
 .code-body {
+  padding: var(--spacer-1) var(--spacer-2);
   margin: 0;
   overflow-x: auto;
   font-family: "Fira code", "Courier New", Courier, monospace;
   background-color: light-dark(var(--code-body-light), var(--code-body-dark));
   border-bottom-right-radius: var(--border-radius);
   border-bottom-left-radius: var(--border-radius);
+
+  & pre {
+    padding: 0;
+  }
 }
 
 .html-comment {
