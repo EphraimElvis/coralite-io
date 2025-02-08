@@ -1,0 +1,15 @@
+.content {
+  padding: var(--spacer-3);
+
+  & > h2:not(:first-child) {
+    margin-top: var(--spacer-5);
+  }
+
+  & > h3 {
+    margin-top: var(--spacer-4);
+  }
+
+  & > h4 {
+    margin-top: var(--spacer-3);
+  }
+}
