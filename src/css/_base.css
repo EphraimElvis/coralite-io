@@ -91,3 +91,9 @@ pre {
   padding: var(--spacer-1);
   tab-size: 4;
 }
+
+code {
+  font-family: var(--font-monospace);
+  color: var(--code-colour);
+  word-wrap: break-word;
+}
