@@ -19,9 +19,9 @@
 
 .nav-link {
   font-weight: 600;
-  text-decoration-color: var(--primary);
+  text-decoration-color: var(--green-light);
 
   &:hover {
-    text-decoration-color: hsl(from var(--primary) h 60% l);
+    text-decoration-color: hsl(from var(--green-light) h 60% l);
   }
 }
