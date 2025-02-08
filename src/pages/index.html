@@ -6,50 +6,35 @@
   <title>Coralite</title>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="top-bar text-bg-dark">
-        <img class="top-bar-image-left" src="assets/coral-elements/coral-borders5.png" loading="lazy">
-        <img class="top-bar-image-right" src="assets/coral-elements/coral-borders4.png" loading="lazy">
-      </div>
-      <nav class="navbar">
-        <div class="container">
-          <a class="navbar-brand" href="/" aria-current="page">
-            <img class="navbar-logo" src="/assets/logo-light.svg" alt="Coralite logo" height="48">
-          </a>
-          <ul class="nav">
-            <li><a class="nav-link" href="/docs/guide">Get started</a></li>
-            <li><a class="nav-link" href="/docs/api">API</a></li>
-            <li><a class="nav-link" href="/blog/">Blog</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main id="content">
-      <section class="hero text-center">
-        <div class="hero-container">
-          <h1 class="hero-title">Build for the Web, With the Web</h1>
+  <coralite-header></coralite-header>
+  <main id="content">
+    <section class="hero text-center">
+      <div class="hero-container">
+        <h1 class="hero-title">Build for the Web, With the Web</h1>
+        
+        <div class="hero-body">
+          <p class="hero-subtitle">Build a database-free website with native HTML modules.</p>
+          <p><a href="/doc/guide" class="button button-primary">Get Started</a></p>
           
-          <div class="hero-body">
-            <p class="hero-subtitle">Build a database-free website with native HTML modules.</p>
-            <p><a href="/doc/guide" class="button button-primary">Get Started</a></p>
-            
-            <div class="d-flex gap justify-content-center">
-              <input class="input" type="text" value="npm i coralite@0.4.0" readonly>
-              <button class="button button-secondary" aria-label="Copy code">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2M16 4h2a2 2 0 0 1 2 2v4m1 4H11"/><path d="m15 10l-4 4l4 4"/></g></svg>           
-              </button>
-            </div>
+          <div class="d-flex gap justify-content-center">
+            <input class="input" type="text" value="npm i coralite@0.4.0" readonly>
+            <button class="button button-secondary" aria-label="Copy code">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2M16 4h2a2 2 0 0 1 2 2v4m1 4H11"/><path d="m15 10l-4 4l4 4"/></g></svg>           
+            </button>
           </div>
         </div>
-        <img class="hero-border-bottom" src="/assets/coral-elements/border2.png" alt="Orange water painting of coral" height="350">
-      </section>
-      
-      <section>
-        <h2>How does it work?</h2>
-        <p>Back to basics, coralite was built as an educational tool at <a href="https://takeup.dev" target="_blank">takeup.dev</a></p>
-      </section>
-    </main>
-  </div>
+      </div>
+      <picture>
+        <source media="(max-width: 420px)" srcset="assets/hero-border-sm.png">
+        <source media="(min-width: 421px)" srcset="assets/hero-border-lg.png">
+        <img class="hero-border-bottom" src="hero-border-lg.png" alt="Orange water painting of coral">
+      </picture>
+    </section>
+    
+    <section class="container p-5">
+      <h2>How does it work?</h2>
+      <p>Back to basics, coralite was built as an educational tool at <a href="https://takeup.dev" target="_blank">takeup.dev</a></p>
+    </section>
+  </main>
 </body>
 </html>
