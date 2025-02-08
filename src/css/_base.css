@@ -40,39 +40,51 @@ p {
 }
 
 h1,
+.h1,
 h2,
+.h2,
 h3,
+.h3,
 h4,
+.h4,
 h5,
-h6 {
+.h5,
+h6,
+.h6 {
   margin-top: 0;
   margin-bottom: var(--spacer-1);
   font-family: var(--font-heading);
   line-height: var(--heading-line-height);
 }
 
-h1 {
+h1,
+.h1 {
   font-size: calc(var(--spacer-base) + 2rem);
 }
 
-h2 {
-  font-size: calc(var(--spacer-base) + 1.5rem);
+h2,
+.h2 {
+  font-size: calc(var(--spacer-base) + 1.3rem);
 }
 
-h3 {
-  font-size: calc(var(--spacer-base) + 1rem);
+h3,
+.h3 {
+  font-size: calc(var(--spacer-base) + .8rem);
 }
 
-h4 {
-  font-size: var(--spacer-4);
+h4,
+.h4 {
+  font-size: calc(var(--spacer-base) + .5rem);
 }
 
-h5 {
-  font-size: var(--spacer-3);
+h5,
+.h5 {
+  font-size: calc(var(--spacer-base) + .3rem);
 }
 
-h6 {
-  font-size: var(--spacer-2);
+h6,
+.h6 {
+  font-size: calc(var(--spacer-base) + .1rem);
 }
 
 pre {
