@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <coralite-meta></coralite-meta>
+
+  <title>Getting started - Coralite</title>
+</head>
+<body>
+  <coralite-header></coralite-header>
+  <main class="container content">
+    <h1>Installation</h1>
+
+    <p>First things first, you will need at least <a href="https://nodejs.org/" target="_blank">node</a> version <strong>18.8.0</strong> and above installed.</p>
+
+    <p>After <a href="https://docs.npmjs.com/cli/v6/commands/npm-init" target="_blank">initialising</a> your project, install coralite as a dev dependency:</p>
+
+    <coralite-code type="bash">
+      npm install --save-dev coralite
+    </coralite-code>
+
+    <h2>ECMAScript Modules</h2>
+
+    <p>
+      Coralite depends on <a href="https://nodejs.org/api/vm.html#class-vmmodule" target="_blank">ECMAScript Modules</a> which is only available with the 
+      <code>--experimental-vm-modules</code> command flag enabled
+    </p>
+
+    <p>There are two ways to add this command flag</p>
+
+    <p>Set the command flag after running node:</p>
+
+    <coralite-code type="bash">
+      node --experimental-vm-modules node_modules/.bin/coralite
+    </coralite-code>
+
+    <p>Or set flag via environment variable. If you are running windows, use <a href="https://github.com/kentcdodds/cross-env" target="_blank">cross-env</a> to be able to set environment variables, otherwise use the following:</p>
+
+    <coralite-code type="bash">
+      NODE_OPTIONS="--experimental-vm-modules" coralite
+    </coralite-code>
+
+    <h2>Build options</h2>
+
+    <ul>
+      <li>-t or --templates: The path to your templates directory containing reusable UI elements (e.g., -t ./src/templates).</li>
+      <li>-p or --pages: The path to your pages directory where static HTML files reside (e.g., -p ./src/pages).</li>
+      <li>--output or -o: The output directory for the generated site (e.g., --output ./dist).</li>
+    </ul>
+
+    <h2>Build script</h2>
+
+    <p>To prepare the development environment, we'll add the build command to the <strong>"script"</strong> property in our <code>package.json</code> file.</p>
+
+    <p>Here is an example of what your <code>package.json</code> file should look like</p>
+
+    <coralite-code type="package.json">
+<pre>
+{
+  "name": "my-coralite-site",
+  "scripts": {
+    "build": "NODE_OPTIONS="--experimental-vm-modules" coralite -t src/templates -p src/pages -o dist"
+  },
+  "devDependencies": {
+    "coralite": "^0.5.0"
+  }
+}</pre>
+    </coralite-code>
+
+    <hr>
+
+    <p>Next, follow the <a href="getting-stated.html">getting started</a> guide to discover how build your first web page with coralite!</p>
+  </main>
+</body>
+</html>
