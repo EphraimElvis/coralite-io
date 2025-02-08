@@ -13,8 +13,8 @@
 }
 
 @font-face {
-  font-family: "Fira code";
+  font-family: "JetBrain mono";
   font-weight: 400;
-  src: url("/assets/fonts/FiraCode-Regular.woff2") format("woff2");
+  src: url("/assets/fonts/JetBrainsMono-Medium") format("woff2");
   font-display: swap;
 }
