@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <coralite-meta></coralite-meta>
+
+  <title>Getting started - Coralite</title>
+</head>
+<body>
+  <coralite-header></coralite-header>
+  <main class="container content">
+    <h1>Getting Started</h1>
+
+    <p>This guide will walk you through creating your first web page using Coralite, a static site generator built around HTML modules.</p>
+
+    <p>
+      Coralite templates represent a simpler form of web components. They allow you to create custom elements using "template" and "slot" elements,
+      but they do not use the Shadow DOM, as they're server-side rendered and there is no hydration.
+    </p>
+  
+    <h2>Project Structure</h2>
+
+    <p>Create a new project directory with the following structure:</p>
+
+    <coralite-code type="Project Structure">
+    <pre>
+  my-coralite-site/
+  ├── src/
+  │   ├── templates/
+  │   │   ├── header.html
+  │   │   ├── body.html
+  │   │   └── footer.html
+  │   └── pages/
+  │       └── index.html
+  └── dist/</pre>
+  </coralite-code>
+
+    <h2>Creating Templates</h2>
+
+    <h3>Header template</h3>
+
+    <p>
+      Every template must have an "id" attribute that matches its usage in pages, in this case our header template has the id of "<code>coralite-header</code>".
+      Take note in the example below the use of double curly braces <code>{{ title }}</code> will display the attribute value
+    </p>
+
+    <p>
+      Just like Web Components can pass data to templates through both attribute values and slots so can Coralite templates, however,
+      Coralite templates use a special syntax with double curly braces to display the attribute values.
+    </p>
+
+    <coralite-code-html>
+      <!-- my-coralite-site/src/templates/header.html -->
+      <template id="coralite-header">
+        <h1>{{ title }}</h1>
+      </template>
+    </coralite-code-html>
+  
+    <h3>Use Header Template</h3>
+
+    <p>In order to use the template in pages, the custom element name must match the template id.</p>
+
+    <coralite-code-html>
+      <!-- my-coralite-site/src/pages/index.html -->
+      <html lang="en">
+      <head>
+        <title>My coralite site</title>
+      </head>
+      <body>
+        <coralite-header title="My Title"></coralite-header>
+      </body>
+      </html>
+    </coralite-code-html>
+
+    <h3>Building your site</h3>
+
+    <p>Generate your site using the Coralite CLI:</p>
+
+    <coralite-code type="bash">
+      npm run build
+    </coralite-code>
+  </main>
+</body>
+</html>
