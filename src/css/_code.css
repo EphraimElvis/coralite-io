@@ -15,7 +15,11 @@
   --code-pink-dark: #ff7de9;
   --code-purple-light: #8f4aff;
   --code-purple-dark: #b98eff;
-  color: light-dark(var(--code-colour-light), var(--code-colour-dark));
+  margin-bottom: var(--spacer-2);
+
+  & code {
+    color: light-dark(var(--code-colour-light), var(--code-colour-dark));
+  }
 }
 
 .code-toolbar {
