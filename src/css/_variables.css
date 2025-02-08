@@ -2,7 +2,11 @@
   color-scheme: light dark;
 
   /* colours */
-  --primary: #d0ff00;
+  --green-light: #d0ff00;
+  --green-dark: #667d00;
+  --pink-dark: #d63384;
+  --pink-light: #e685b5;
+  --primary: light-dark(var(--green-dark), var(--green-light));
   --secondary-dark: rgb(49, 26, 75);
   --secondary: #754aaa;
   --light: #f9f9f9;
