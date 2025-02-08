@@ -11,18 +11,19 @@
   --secondary: #754aaa;
   --light: #f9f9f9;
   --dark: rgb(49, 26, 75);
-  --darker: rgb(6, 3, 8);
+  --darker: rgb(14, 7, 19);
   --body-bg: light-dark(var(--light), var(--darker));
   --body-colour: light-dark(var(--darker), var(--light));
-  --gradient-dark: linear-gradient(var(--secondary-dark), var(--dark));
+  --gradient-dark: linear-gradient(var(--secondary-dark), var(--darker));
+  --code-colour: light-dark(var(--pink-dark), var(--pink-light));
 
   /* spacing */
   --spacer-base: 1rem;
   --spacer-1: calc(var(--spacer-base) - .3rem);
   --spacer-2: var(--spacer-base);
-  --spacer-3: calc(var(--spacer-base) + .2rem);
-  --spacer-4: calc(var(--spacer-base) + .5rem);
-  --spacer-5: calc(var(--spacer-base) + 1rem);
+  --spacer-3: calc(var(--spacer-base) + .3rem);
+  --spacer-4: calc(var(--spacer-base) + 1rem);
+  --spacer-5: calc(var(--spacer-base) + 2rem);
 
   --padding-x: 1rem;
   --padding-y: .5rem;

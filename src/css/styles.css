@@ -14,6 +14,9 @@
 @import url("./_display.css");
 @import url("./_flex.css");
 @import url("./_code.css");
+@import url("./_spacing.css");
+@import url("./_background.css");
+@import url("./_content.css");
 
 /* short screens */
 @media screen and (max-height: 825px) {
