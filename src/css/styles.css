@@ -24,3 +24,33 @@
     height: 5vh;
   }
 }
+
+/* Small screen and larger */
+@media screen and (min-width: 420px){
+  .hero {
+    background-image: url("/assets/hero-background-md.avif");
+  }
+}
+
+/* Medium screen and larger */
+@media screen and (min-width: 768px){
+  .content {
+    padding: var(--spacer-5);
+  }
+
+  .hero {
+    background-image: url("/assets/hero-background-lg.avif");
+  }
+
+  .hero-body {
+    padding: var(--spacer-2);
+  }
+
+  .hero-subtitle {
+    font-size: var(--spacer-4);
+  }
+
+  .hero-border-bottom {
+    top: 100%;
+  }
+}
