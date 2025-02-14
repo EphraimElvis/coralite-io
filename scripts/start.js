@@ -52,13 +52,15 @@ async function rebuild (path) {
   }
 }
 
-// listen for changes and add events to rebuild function when file is changed or added
+// listen for changes and add events to rebuild function when file is changed or unlinked
 watcher.on('change', async (path) => {
   await rebuild(path)
 })
-watcher.on('add', async (path) => {
+
+watcher.on('unlink', async (path) => {
   await rebuild(path)
 })
+
 // listen for errors and handle them by trying to gracefully shut down the server when an error occurs
 watcher.on('error', () => {
   // close server on error
