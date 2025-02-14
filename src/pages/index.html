@@ -36,9 +36,41 @@
       <img class="video-bg" src="/assets/images/bg-water.avif" alt="Water">
       <iframe class="video-player" width="560" height="315" src="https://www.youtube.com/embed/eGfkaTL1UYA?si=20M4SnDTPqJkp9Lf?cc_load_policy=1" title="Building Modular HTML Sites with Coralite" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </section>
+
+    <section class="container p-1 p-md-5 position-relative">
+      <h2>Features</h2>
+      <div class="grid column-md-2 gap divider">
+        <p>The core purpose of Coralite is static site generator that prioritizes native web technologies. Unlike many modern frameworks that require special syntax or additional plugins, Coralite lets developers build websites using standard HTML, CSS, and JavaScript. </p>
+
+        <div class="grid column-3 gap">
+          <img class="content-img" src="/assets/images/icon-html.png" alt="HTML" loading="lazy">
+          <img class="content-img" src="/assets/images/icon-css.png" alt="CSS" loading="lazy">
+          <img class="content-img" src="/assets/images/icon-js.png" alt="JavaScript" loading="lazy">
+        </div>
+      </div>
+
+      <div class="grid column-md-3 gap">
+        <div>
+          <h3>Templating</h3>
+          <p>The template system in Coralite is built around custom elements, providing a flexible foundation for creating reusable page components. What sets this template system apart is its use of standard HTML syntax - there's no need to learn special template languages or markup formats.</p>
+        </div>
+        <div>
+          <h3>Data handling</h3>
+          <p>Coralite handles data through three main approaches: attributes, slots, and computed tokens. Attributes let you pass simple data (like text) to your templates using HTML attributes. Slots are more powerful, allowing you to pass complex HTML content into specific places in your templates. </p>
+        </div>
+        <div>
+          <h3>Aggregation</h3>
+          <p>Coralite's aggregation system makes it easy to collect and display content from multiple web pages automatically. Rather than manually updating lists of content (like blog posts) on your website, Coralite reads basic information from each page and automatically creates organized lists or indexes using that information. It's like having an automated assistant that keeps your website's table of contents up to date whenever you add new content.</p>
+        </div>
+      </div>
+
+      <picture>
+        <source media="(max-width: 768px)" srcset="/assets/coral-elements/coral borders1.png">
+        <source media="(min-width: 769px)" srcset="/assets/coral-elements/border3.png">
+        <img class="content-border" src="/assets/coral-elements/coral borders1.png" loading="lazy">
       </picture>
     </section>
-    
+
     <section class="container p-5">
       <h2>How does it work?</h2>
       <p>Back to basics, coralite was built as an educational tool at <a href="https://takeup.dev" target="_blank">takeup.dev</a></p>
