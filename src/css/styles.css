@@ -38,6 +38,13 @@
     padding: var(--spacer-5);
   }
 
+  /* spacing */
+
+  .p-md-5 {
+    padding: var(--spacer-5);
+  }
+
+  /* Hero */
   .hero {
     background-image: url("/assets/images/hero-background-lg.avif");
   }
@@ -52,5 +59,14 @@
 
   .hero-border-bottom {
     top: 100%;
+  }
+
+  /* Grid */
+  .column-md-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .column-md-2 {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

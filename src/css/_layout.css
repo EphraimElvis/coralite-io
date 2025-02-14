@@ -10,3 +10,21 @@
 .gap {
   gap: var(--spacer-1);
 }
+
+.position-relative {
+  position: relative;
+}
+
+.grid {
+  display: grid;
+}
+
+.column-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.divider {
+  padding-bottom: var(--spacer-4);
+  margin-bottom: var(--spacer-4);
+  border-bottom: 3px dotted var(--secondary);
+}
