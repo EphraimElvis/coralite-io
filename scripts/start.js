@@ -1,0 +1,70 @@
+/**
+ * Initializes a web development application with HTML, CSS, server, and change monitoring.
+ *
+ * @example
+ * Run this command to initialise the application:
+ * ```bash
+ * node --experimental-vm-modules scripts/start.js
+ * ```
+ */
+
+import chokidar from 'chokidar'
+import { broadcastMessage, server } from './server.js'
+import { buildHTML } from './build-html.js'
+import { buildCSS } from './build-css.js'
+
+const htmlPath = {
+  pages: 'src/pages',
+  templates: 'src/templates',
+  output: 'dist'
+}
+const cssPath = {
+  filename: 'styles.css',
+  input: 'src/css',
+  output: 'dist/css'
+}
+
+await buildHTML(htmlPath)
+await buildCSS(cssPath)
+
+// start server in port 3000
+const webserver = await server()
+
+// initialise watcher.
+const watcher = chokidar.watch(['./src', './public'])
+
+/**
+ * Recompile the application when a file changes or is added,
+ * and send notification about it via broadcastMessage function
+ * in 'src/broadcast-message' module if path ends with .html/.css
+ * then rebuild HTML / CSS else do nothing for other files.
+ * @param {string} path path to the file that has been changed or added
+ */
+async function rebuild (path) {
+  if (path.endsWith('.html')) {
+    // rebuild HTML and send notification
+    await buildHTML(htmlPath)
+    broadcastMessage(path)
+  } else if (path.endsWith('.css')) {
+    // rebuild CSS and send notification
+    await buildCSS(cssPath)
+    broadcastMessage(path)
+  }
+}
+
+// listen for changes and add events to rebuild function when file is changed or added
+watcher.on('change', async (path) => {
+  await rebuild(path)
+})
+watcher.on('add', async (path) => {
+  await rebuild(path)
+})
+// listen for errors and handle them by trying to gracefully shut down the server when an error occurs
+watcher.on('error', () => {
+  // close server on error
+  try {
+    webserver.close()
+  } catch (e) {
+    console.error('Error closing server:', e)
+  }
+})
