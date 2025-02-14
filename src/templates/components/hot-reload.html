@@ -1,0 +1,9 @@
+<template id="coralite-hot-reload">
+  <script data-dev="true">
+    const eventSource = new window.EventSource('/_/rebuild')
+
+    eventSource.addEventListener('rebuild', () => {
+      window.location.reload()
+    })
+  </script>
+</template>
