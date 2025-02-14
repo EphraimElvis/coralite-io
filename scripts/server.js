@@ -30,6 +30,18 @@ export function broadcastMessage (message) {
  * @returns {MiddlewareHandler} Static asset handler function
  */
 const staticAsset = (liveAsset, assetPath) => (request, response) => {
+  let uri, dur, start, dash = colours.gray(' ─ ')
+  let status = 200
+  start = process.hrtime()
+
+  response.once('finish', () => {
+    dur = process.hrtime(start)
+    uri = request.originalUrl || request.url
+
+    // log the response time and status code
+    process.stdout.write(toTime() + toCode(status) + dash + toMS(dur) + dash + uri + '\n')
+  })
+
   // lookup LiveFile instance from our LiveDirectory instance.
   let path = request.path
 
@@ -53,7 +65,10 @@ const staticAsset = (liveAsset, assetPath) => (request, response) => {
   const file = liveAsset.get(path)
 
   // return a 404 if no asset/file exists on the derived path
-  if (file === undefined) return response.status(404).send()
+  if (file === undefined) {
+    status = 404
+    return response.status(status).send()
+  }
 
   const fileParts = file.path.split('.')
   const extension = fileParts[fileParts.length - 1]
@@ -62,11 +77,11 @@ const staticAsset = (liveAsset, assetPath) => (request, response) => {
   const content = file.content
 
   if (!content) {
+    status = 404
     // handle case where no content is available for this file type and return a not found response.
     // This can happen if the asset was deleted or moved to another location in our live directory
     // structure but still exists on disk at that path (e.g., due to caching)
-
-    return response.status(404).send()
+    return response.status(status).send()
   }
 
   if (content instanceof Buffer) {
@@ -77,6 +92,41 @@ const staticAsset = (liveAsset, assetPath) => (request, response) => {
     return response.type(extension).stream(content)
   }
 }
+
+/**
+ * Creates current time in format [HH:MM:SS].mmm (milliseconds), colored with ANSI colors, and formatted as bold white string for better readability of logs or console output
+ * @returns {string} - Formatted timestamp to be used within a log message.
+ */
+function toTime () {
+  const now = new Date()
+  const hours = now.getHours().toString().padStart(2, '0')
+  const minutes = now.getMinutes().toString().padStart(2, '0')
+  const seconds = now.getSeconds().toString().padStart(2, '0')
+  const milliseconds = now.getMilliseconds().toString().padStart(3, '0')
+
+  return '[' + colours.magenta(`${hours}:${minutes}:${seconds}.${milliseconds}`) + '] '
+}
+
+function toMS (arr) {
+  return colours.white().bold(`${(arr[1] / 1e6).toFixed(2)}ms`)
+}
+
+/**
+ * Converts HTTP status code into a colorized text.
+ * @param {number} code - HTTP status code to convert into a colorized text.
+ */
+function toCode (code) {
+  let fn = 'green'
+
+  if (code >= 400) {
+    fn = 'red'
+  } else if (code > 300) {
+    fn = 'yellow'
+  }
+
+  return colours[fn](code)
+}
+
 /**
  * Routes for server-side functionality
  *
@@ -143,7 +193,7 @@ export function server (port = 3000) {
         let border = '─'.repeat(Math.min(process.stdout.columns, 36) / 2)
         // print server status
         process.stdout.write('\n' + PAD + colours.green('Coralite is ready! 🚀\n\n'))
-        process.stdout.write(PAD + `${colours.bold('- Local:')}      ${local}\n`)
+        process.stdout.write(PAD + `${colours.bold('- Local:')}      ${local}\n\n`)
         process.stdout.write(border + colours.inverse(' LOGS ') + border + '\n\n')
 
         // resolve web server
