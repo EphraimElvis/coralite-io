@@ -9,7 +9,7 @@
   & .container {
     position: relative;
     height: 100%;
-    background-image: url("/assets/top-bar-coral-1.png"), url("/assets/top-bar-coral-2.png");
+    background-image: url("/assets/images/top-bar-coral-1.png"), url("/assets/images/top-bar-coral-2.png");
     background-repeat: no-repeat, no-repeat;
     background-position: 10% center, 90% center;
   }

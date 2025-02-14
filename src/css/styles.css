@@ -28,7 +28,7 @@
 /* Small screen and larger */
 @media screen and (min-width: 420px){
   .hero {
-    background-image: url("/assets/hero-background-md.avif");
+    background-image: url("/assets/images/hero-background-md.avif");
   }
 }
 
@@ -39,7 +39,7 @@
   }
 
   .hero {
-    background-image: url("/assets/hero-background-lg.avif");
+    background-image: url("/assets/images/hero-background-lg.avif");
   }
 
   .hero-body {

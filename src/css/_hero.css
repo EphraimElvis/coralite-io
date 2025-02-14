@@ -6,9 +6,10 @@
   min-height: 713px;
   max-height: 740px;
   margin-bottom: 200px;
-  background-image: url("/assets/hero-background-sm.avif");
+  background-image: url("/images/hero-background-sm.avif");
   background-position: bottom;
   background-size: cover;
+  border-bottom: 5px solid var(--secondary);
 
   & .button-primary {
     background-color: var(--green-light);
