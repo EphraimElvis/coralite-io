@@ -17,6 +17,7 @@
 @import url("./_spacing.css");
 @import url("./_background.css");
 @import url("./_content.css");
+@import url("./_video.css");
 
 /* short screens */
 @media screen and (max-height: 825px) {
@@ -34,6 +35,10 @@
 
 /* Medium screen and larger */
 @media screen and (min-width: 768px){
+  .video {
+    padding: var(--spacer-5);
+  }
+
   .content {
     padding: var(--spacer-5);
   }
