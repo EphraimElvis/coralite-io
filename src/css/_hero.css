@@ -56,3 +56,28 @@
   left: 50%;
   transform: translate(-50%, -57%);
 }
+
+@media screen and (min-width: 768px){
+  /* Hero */
+  .hero {
+    background-image: url("/assets/images/hero-background-lg.avif");
+  }
+
+  .hero-body {
+    padding: var(--spacer-2);
+  }
+
+  .hero-subtitle {
+    font-size: var(--spacer-4);
+  }
+
+  .hero-border-bottom {
+    top: 100%;
+  }
+}
+
+@media screen and (min-width: 420px){
+  .hero {
+    background-image: url("/assets/images/hero-background-md.avif");
+  }
+}

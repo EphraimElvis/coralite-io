@@ -20,3 +20,9 @@
 .mb-4 {
   margin-bottom: var(--spacer-5);
 }
+
+@media screen and (min-width: 768px){
+  .p-md-5 {
+    padding: var(--spacer-5);
+  }
+}

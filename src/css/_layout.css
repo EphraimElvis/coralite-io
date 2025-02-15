@@ -28,3 +28,15 @@
   margin-bottom: var(--spacer-4);
   border-bottom: 3px dotted var(--secondary);
 }
+
+/* Medium screen and larger */
+@media screen and (min-width: 768px){
+  .column-md-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .column-md-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+

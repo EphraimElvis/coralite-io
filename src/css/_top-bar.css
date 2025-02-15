@@ -14,3 +14,9 @@
     background-position: 10% center, 90% center;
   }
 }
+
+@media screen and (max-height: 825px) {
+  .top-bar {
+    height: 5vh;
+  }
+}
