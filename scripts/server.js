@@ -163,13 +163,13 @@ function routes (server) {
       response.sse.send('Some initial message')
 
       // Assign a unique identifier to this stream and store it in our broadcast pool
-      response.sse.id = crypto.randomUUID()
-      sse_streams[response.sse.id] = response.sse
+      const sseId = crypto.randomUUID()
+      sse_streams[sseId] = response.sse
 
       // Bind a 'close' event handler to cleanup this connection once it disconnects
       response.once('close', () => {
         // Delete the stream from our broadcast pool
-        delete sse_streams[response.sse.id]
+        delete sse_streams[sseId]
       })
     } else {
       // End the response with some kind of error message as this request did not support SSE
@@ -194,7 +194,7 @@ export function server (port = 3000) {
     routes(webserver)
 
     webserver.listen(port)
-      .then((socket) => {
+      .then(() => {
         const PAD = '  '
         let border = '─'.repeat(Math.min(process.stdout.columns, 36) / 2)
         // print server status
