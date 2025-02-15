@@ -7,11 +7,12 @@
  * node --experimental-vm-modules scripts/start.js
  * ```
  */
-
+import colours from 'kleur'
 import chokidar from 'chokidar'
 import { broadcastMessage, server } from './server.js'
 import { buildHTML } from './build-html.js'
 import { buildCSS } from './build-css.js'
+import { toMS, toTime } from './build-utils.js'
 
 const htmlPath = {
   pages: 'src/pages',
@@ -41,13 +42,28 @@ const watcher = chokidar.watch(['./src', './public'])
  * @param {string} path path to the file that has been changed or added
  */
 async function rebuild (path) {
+  let duration, dash = colours.gray(' ─ ')
+  let start = process.hrtime()
+
   if (path.endsWith('.html')) {
     // rebuild HTML and send notification
     await buildHTML(htmlPath)
+
+    // prints time and path to the file that has been changed or added.
+    duration = process.hrtime(start)
+    process.stdout.write(toTime() + colours.bgGreen('Rebuild HTML') + dash + toMS(duration) + dash + path + '\n')
+
+    // broadcast message about the change in HTML file path to be updated by user or other scripts if needed.
     broadcastMessage(path)
   } else if (path.endsWith('.css')) {
     // rebuild CSS and send notification
     await buildCSS(cssPath)
+
+    // Prints time and path to the file that has been changed or added.
+    duration = process.hrtime(start)
+    process.stdout.write(toTime() + colours.bgGreen('Rebuild CSS') + dash + toMS(duration) + dash + path + '\n')
+
+    // broadcast message about the change in CSS file path to be updated by user or other scripts if needed.
     broadcastMessage(path)
   }
 }
