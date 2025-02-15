@@ -109,13 +109,17 @@ function toTime () {
   return '[' + colours.magenta(`${hours}:${minutes}:${seconds}.${milliseconds}`) + '] '
 }
 
-function toMS (arr) {
-  return colours.white().bold(`${(arr[1] / 1e6).toFixed(2)}ms`)
+/**
+ * Creates a formatted timestamp in milliseconds with ANSI colors and bold white string for better readability of logs or console output.
+ * @param {NodeJS.HRTime} hrtime - High Resolution Time in microseconds since epoch, used to calculate time difference between two points of execution or the start/stopwatch function call respectively.
+ */
+function toMS (hrtime) {
+  return colours.white().bold(`${(hrtime[1] / 1e6).toFixed(2)}ms`)
 }
 
 /**
- * Converts HTTP status code into a colorized text.
- * @param {number} code - HTTP status code to convert into a colorized text.
+ * Converts HTTP status code into a colourised text.
+ * @param {number} code - HTTP status code to convert into a colourised text.
  */
 function toCode (code) {
   let fn = 'green'
