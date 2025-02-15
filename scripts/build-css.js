@@ -1,6 +1,7 @@
 import postcss from 'postcss/lib/postcss'
 import atImport from 'postcss-import'
-import { mkdir, readFile, stat, writeFile } from 'node:fs/promises'
+import mergeQueries from 'postcss-merge-queries'
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import { join } from 'node:path'
 
@@ -21,6 +22,7 @@ export function buildCSS ({ filename, input, output }) {
         // process the CSS with PostCSS.
         postcss()
           .use(atImport())
+          .use(mergeQueries())
           .process(css, { from })
           .then((result) => {
             const mkdirPromise = []
