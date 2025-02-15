@@ -88,7 +88,9 @@ const staticAsset = (liveAsset, assetPath) => (request, response) => {
     // set appropriate mime-type and serve file content Buffer as response body (This means that the file content was cached in memory)
     return response.type(extension).send(content)
   } else {
+    /** @TODO Response.stream is missing type */
     // set the type and stream the content as the response body (This means that the file content was NOT cached in memory)
+    //@ts-ignore
     return response.type(extension).stream(content)
   }
 }
