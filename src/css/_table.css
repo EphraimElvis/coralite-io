@@ -1,12 +1,13 @@
 .table {
   width: 100%;
+  text-align: left;
   caption-side: bottom;
   border-collapse: collapse;
   border-color: var(--secondary);
-  text-align: left;
 
-  > :not(caption) > * > * {
-    padding: .5rem .5rem;
+  /* stylelint-disable-next-line selector-max-universal */
+  & > :not(caption) > * > * {
+    padding: .5rem;
     background-color: var(--bs-table-bg);
     border-bottom-width: 1px;
   }
@@ -17,9 +18,14 @@
   -webkit-overflow-scrolling: touch;
 }
 
-tbody, td, tfoot, th, thead, tr {
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  text-align: inherit;
   border-color: inherit;
   border-style: solid;
   border-width: 0;
-  text-align: inherit;
 }
