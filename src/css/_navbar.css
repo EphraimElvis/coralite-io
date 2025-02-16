@@ -25,3 +25,9 @@
     text-decoration-color: hsl(from var(--green-light) h 60% l);
   }
 }
+
+.nav-icon {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+}
