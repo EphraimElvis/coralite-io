@@ -3,11 +3,12 @@ import LiveDirectory from 'live-directory'
 import { resolve } from 'node:path'
 import localAccess from 'local-access'
 import colours from 'kleur'
+import { toCode, toMS, toTime } from './build-utils.js'
 
 const sse_streams = {}
 
 /**
- * @import {MiddlewareHandler} from 'hyper-express
+ * @import {MiddlewareHandler} from 'hyper-express'
  */
 
 /**
@@ -30,16 +31,18 @@ export function broadcastMessage (message) {
  * @returns {MiddlewareHandler} Static asset handler function
  */
 const staticAsset = (liveAsset, assetPath) => (request, response) => {
-  let uri, dur, start, dash = colours.gray(' ─ ')
+  /** @type {[number, number]} */
+  let duration
+  let uri, start, dash = colours.gray(' ─ ')
   let status = 200
   start = process.hrtime()
 
   response.once('finish', () => {
-    dur = process.hrtime(start)
+    duration = process.hrtime(start)
     uri = request.originalUrl || request.url
 
     // log the response time and status code
-    process.stdout.write(toTime() + toCode(status) + dash + toMS(dur) + dash + uri + '\n')
+    process.stdout.write(toTime() + toCode(status) + dash + toMS(duration) + dash + uri + '\n')
   })
 
   // lookup LiveFile instance from our LiveDirectory instance.
@@ -93,44 +96,6 @@ const staticAsset = (liveAsset, assetPath) => (request, response) => {
     //@ts-ignore
     return response.type(extension).stream(content)
   }
-}
-
-/**
- * Creates current time in format [HH:MM:SS].mmm (milliseconds), colored with ANSI colors, and formatted as bold white string for better readability of logs or console output
- * @returns {string} - Formatted timestamp to be used within a log message.
- */
-function toTime () {
-  const now = new Date()
-  const hours = now.getHours().toString().padStart(2, '0')
-  const minutes = now.getMinutes().toString().padStart(2, '0')
-  const seconds = now.getSeconds().toString().padStart(2, '0')
-  const milliseconds = now.getMilliseconds().toString().padStart(3, '0')
-
-  return '[' + colours.magenta(`${hours}:${minutes}:${seconds}.${milliseconds}`) + '] '
-}
-
-/**
- * Creates a formatted timestamp in milliseconds with ANSI colors and bold white string for better readability of logs or console output.
- * @param {NodeJS.HRTime} hrtime - High Resolution Time in microseconds since epoch, used to calculate time difference between two points of execution or the start/stopwatch function call respectively.
- */
-function toMS (hrtime) {
-  return colours.white().bold(`${(hrtime[1] / 1e6).toFixed(2)}ms`)
-}
-
-/**
- * Converts HTTP status code into a colourised text.
- * @param {number} code - HTTP status code to convert into a colourised text.
- */
-function toCode (code) {
-  let fn = 'green'
-
-  if (code >= 400) {
-    fn = 'red'
-  } else if (code > 300) {
-    fn = 'yellow'
-  }
-
-  return colours[fn](code)
 }
 
 /**
