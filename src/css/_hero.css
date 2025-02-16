@@ -57,6 +57,10 @@
   transform: translate(-50%, -57%);
 }
 
+.hero-input {
+  font-size: calc(var(--spacer-base) - .2rem);
+}
+
 @media screen and (min-width: 768px){
   /* Hero */
   .hero {
@@ -67,12 +71,12 @@
     padding: var(--spacer-2);
   }
 
-  .hero-subtitle {
-    font-size: var(--spacer-4);
-  }
-
   .hero-border-bottom {
     top: 100%;
+  }
+
+  .hero-input {
+    font-size: var(--spacer-2);
   }
 }
 
