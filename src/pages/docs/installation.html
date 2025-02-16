@@ -14,9 +14,7 @@
 
     <p>After <a href="https://docs.npmjs.com/cli/v6/commands/npm-init" target="_blank">initialising</a> your project, install coralite as a dev dependency:</p>
 
-    <coralite-code type="bash">
-      npm install --save-dev coralite
-    </coralite-code>
+    <coralite-code language="bash">npm install --save-dev coralite</coralite-code>
 
     <h2>ECMAScript Modules</h2>
 
@@ -29,15 +27,11 @@
 
     <p>Set the command flag after running node:</p>
 
-    <coralite-code type="bash">
-      node --experimental-vm-modules node_modules/coralite/bin/coralite
-    </coralite-code>
+    <coralite-code language="bash">node --experimental-vm-modules node_modules/coralite/bin/coralite</coralite-code>
 
     <p>Or set flag via environment variable. If you are running windows, use <a href="https://github.com/kentcdodds/cross-env" target="_blank">cross-env</a> to be able to set environment variables, otherwise use the following:</p>
 
-    <coralite-code type="bash">
-      NODE_OPTIONS="--experimental-vm-modules" coralite
-    </coralite-code>
+    <coralite-code language="bash">NODE_OPTIONS="--experimental-vm-modules" coralite</coralite-code>
 
     <h2>Build options</h2>
 
@@ -53,18 +47,15 @@
 
     <p>Here is an example of what your <code>package.json</code> file should look like</p>
 
-    <coralite-code type="package.json">
-<pre>
-{
+    <coralite-code language="JSON">{
   "name": "my-coralite-site",
   "scripts": {
     "build": "NODE_OPTIONS="--experimental-vm-modules" coralite -t src/templates -p src/pages -o dist"
   },
   "devDependencies": {
-    "coralite": "^0.5.0"
+    "coralite": "^0.6.1"
   }
-}</pre>
-    </coralite-code>
+}</coralite-code>
 
     <hr>
 
