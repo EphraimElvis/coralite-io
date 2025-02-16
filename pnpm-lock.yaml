@@ -18,11 +18,14 @@ importers:
         specifier: ^4.0.3
         version: 4.0.3
       coralite:
-        specifier: ^0.6.0
-        version: 0.6.0
+        specifier: ^0.6.1
+        version: 0.6.1
       eslint:
         specifier: ^9.19.0
         version: 9.19.0
+      highlight.js:
+        specifier: ^11.11.1
+        version: 11.11.1
       hyper-express:
         specifier: ^6.17.3
         version: 6.17.3
@@ -323,8 +326,8 @@ packages:
     resolution: {integrity: sha512-9Kr/j4O16ISv8zBBhJoi4bXOYNTkFLOqSL3UDB0njXxCXNezjeyVrJyGOWtgfs/q2km1gwBcfH8q1yEGoMYunA==}
     engines: {node: '>=18'}
 
-  coralite@0.6.0:
-    resolution: {integrity: sha512-FTSJTfiEbfEisveDbRbgJrZcTVzABpGXrFHDFPzQSlNvLV0zV+GYO9cpq6203OGlk5zo1Fiop38Swv5g8C8l7g==}
+  coralite@0.6.1:
+    resolution: {integrity: sha512-K0iNXwSgaPt+mCupC95rFacwPaAVf9d2TC+UFj1hySGlcLQVUaFtOb2c8kdLZAinYGHujpiK0cU62iyc87UrcA==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -564,6 +567,10 @@ packages:
   hasown@2.0.2:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
+
+  highlight.js@11.11.1:
+    resolution: {integrity: sha512-Xwwo44whKBVCYoliBQwaPvtd/2tYFkRQtXDWj1nackaV2JPXx3L0+Jvd8/qCJ2p+ML0/XVkJ2q+Mr+UVdpJK5w==}
+    engines: {node: '>=12.0.0'}
 
   hookified@1.7.0:
     resolution: {integrity: sha512-XQdMjqC1AyeOzfs+17cnIk7Wdfu1hh2JtcyNfBf5u9jHrT3iZUlGHxLTntFBuk5lwkqJ6l3+daeQdHK5yByHVA==}
@@ -1450,7 +1457,7 @@ snapshots:
 
   cookie@1.0.2: {}
 
-  coralite@0.6.0:
+  coralite@0.6.1:
     dependencies:
       commander: 13.1.0
       dom-serializer: 2.0.0
@@ -1704,6 +1711,8 @@ snapshots:
   hasown@2.0.2:
     dependencies:
       function-bind: 1.1.2
+
+  highlight.js@11.11.1: {}
 
   hookified@1.7.0: {}
 
