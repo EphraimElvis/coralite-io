@@ -10,8 +10,8 @@
     "css": "npm-run-all css-lint css-compile",
     "css-lint": "stylelint --fix src/css",
     "css-compile": "postcss src/css -d dist/css",
-    "html": "node --experimental-vm-modules node_modules/coralite/bin/coralite -t src/templates -p src/pages -o dist -i 'data-dev=true'",
-    "start": "node --experimental-vm-modules scripts/start.js",
+    "html": "node --experimental-vm-modules --experimental-import-meta-resolve node_modules/coralite/bin/coralite -t src/templates -p src/pages -o dist -i 'data-dev=true'",
+    "start": "node --experimental-vm-modules --experimental-import-meta-resolve scripts/start.js",
     "test": "npm-run-all css-lint css"
   },
   "keywords": [],
