@@ -18,8 +18,8 @@ importers:
         specifier: ^4.0.3
         version: 4.0.3
       coralite:
-        specifier: ^0.6.2
-        version: 0.6.2
+        specifier: ^0.11.0
+        version: 0.11.0
       eslint:
         specifier: ^9.19.0
         version: 9.19.0
@@ -326,8 +326,8 @@ packages:
     resolution: {integrity: sha512-9Kr/j4O16ISv8zBBhJoi4bXOYNTkFLOqSL3UDB0njXxCXNezjeyVrJyGOWtgfs/q2km1gwBcfH8q1yEGoMYunA==}
     engines: {node: '>=18'}
 
-  coralite@0.6.2:
-    resolution: {integrity: sha512-+56XzqotQfv872mYDJY8bY/d/sN1vGSUiuSUzjHS78zRilGoSbfazQ055HC35qEPxlIDl/11qutfbQPnJ/i9hw==}
+  coralite@0.11.0:
+    resolution: {integrity: sha512-JuydUEoMobr4Nq0VnECyOQoJy1384++DEkazdWEsY148MU8bBUvOgGC1GYvWv6YYkANk3M5IH88vJZP8O8K59A==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -1457,11 +1457,12 @@ snapshots:
 
   cookie@1.0.2: {}
 
-  coralite@0.6.2:
+  coralite@0.11.0:
     dependencies:
       commander: 13.1.0
       dom-serializer: 2.0.0
       htmlparser2: 10.0.0
+      kleur: 4.1.5
 
   cosmiconfig@9.0.0:
     dependencies:
