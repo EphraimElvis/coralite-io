@@ -3,4 +3,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/assets/favicon.ico">
   <link href="/css/styles.css" rel="stylesheet">
+  <link rel="canonical" href="{{ canonical }}">
 </template>
+
+<script type="module">
+  import { defineComponent } from 'coralite'
+
+  export default defineComponent({
+    tokens: {
+      canonical (values) {
+        let result = 'https://coralite.io'
+
+        // return root path
+        if (values.$pathname === 'index.html') {
+          return result
+        }
+
+        let nameSplit = values.$pathname.split('.html')
+        // remove .html file extension.
+        return result + nameSplit.slice(0, nameSplit.length - 1).join('')
+      }
+    }
+  })
+</script>
