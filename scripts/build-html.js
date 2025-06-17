@@ -1,8 +1,7 @@
-import coralite from 'coralite'
+import Coralite from 'coralite'
 import { existsSync } from 'node:fs'
 import { writeFile, mkdir } from 'node:fs/promises'
 import { join } from 'node:path'
-import { getSubDirectory } from 'coralite/utils'
 
 /**
  * Builds HTML files from Coralite templates and pages.
@@ -13,29 +12,13 @@ import { getSubDirectory } from 'coralite/utils'
  * @param {string} options.output - Output path for HTML files
  */
 export async function buildHTML ({ pages, templates, output }) {
-  const documents = await coralite({
+  const coralite = new Coralite({
     templates,
     pages
   })
 
-  for (let i = 0; i < documents.length; i++) {
-    const document = documents[i]
-    // get pages sub directory
-    const subDir = getSubDirectory(pages, document.item.parentPath)
-    const dir = join(output, subDir)
+  const document = await coralite.compile()
 
-    try {
-      if (!existsSync(dir)) {
-        // create directory if it doesn't exist
-        await mkdir(dir)
-      }
-
-      // write the HTML file
-      await writeFile(join(dir, document.item.name), document.html)
-    // file written successfully
-    } catch (err) {
-      throw err
-    }
-  }
+  await coralite.save(document, output)
 }
 
