@@ -57,7 +57,7 @@
   
     <h3>Use Header Template</h3>
 
-    <p>In order to use the template in pages, the custom element name must match the template id.</p>
+    <p>In order to use the template in pages, the custom element name must match the <strong>template id.</strong></p>
 
     <coralite-code-html>
       <!-- my-coralite-site/src/pages/index.html -->
@@ -73,9 +73,14 @@
 
     <h3>Building your site</h3>
 
-    <p>Generate your site using the Coralite CLI:</p>
+    <p>To manually build the example, run the following command:</p>
+
+    <coralite-code language="bash">coralite -t src/templates -p src/pages -o dist</coralite-code>
+
+    <p>If you've followed the <a href="./installation.html#build-script">build script</a> step on the installation guide, run the build script:</p>
 
     <coralite-code language="bash">npm run build</coralite-code>
+    
   </main>
   <coralite-footer></coralite-footer>
   <coralite-hot-reload></coralite-hot-reload>
