@@ -12,21 +12,25 @@
 </template>
 
 <script type="module">
-  import { defineComponent, tokens } from 'coralite'
-  import { parseHTMLDocument } from 'coralite/utils'
-  import hljs from 'highlight.js'
+  import { defineComponent } from 'coralite'
+  import { parseHTML } from 'coralite/utils'
+  import code from 'highlight.js'
+
+  code.configure({
+    classPrefix: 'code-'
+  })
 
   export default defineComponent({
     tokens: {
       popovertarget () {
         return 'copy-' + Math.random().toString(16).substring(2)
       },
-      languageClass () {
-        return tokens.language.toLowerCase()
+      languageClass (attributes) {
+        return attributes.language.toLowerCase()
       }
     },
     slots: {
-      default (content) {
+      default (content, values) {
         let result = []
         let endIndex = content.length
         let startIndex = 0
@@ -46,14 +50,12 @@
           const node = content[i];
 
           if (node.type === 'text' && node.data.trim()) {
-            const rawCode = hljs.highlight(
+            const rawCode = code.highlight(
               node.data,
-              { language: tokens.language.toLowerCase() }
+              { language: values.language.toLowerCase(),  }
             ).value
 
-            const nodes = parseHTMLDocument({
-              content: rawCode
-            })
+            const nodes = parseHTML(rawCode)
 
             result = result.concat(nodes.root.children)
           }
