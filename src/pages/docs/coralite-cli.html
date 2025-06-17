@@ -19,7 +19,7 @@
 
     <h2>Command Structure</h2>
     <p>The basic command structure for the Coralite CLI is as follows:</p>
-    <coralite-code language="bash">node --experimental-vm-modules coralite [options]</coralite-code>
+    <coralite-code language="bash">coralite [options]</coralite-code>
 
     <h2>Options</h2>
     <p>The Coralite CLI accepts several options to configure its behavior. Here's a detailed list of available options:
@@ -30,7 +30,7 @@
         <p><strong><code>-t, --templates &lt;path&gt;</code></strong> (required)</p>
         <ul>
           <li>Description: The file system path to the directory containing Coralite templates.</li>
-          <li>Example: <code>--templates ./path/to/templates</code></li>
+          <li>Example: <code>--templates path/to/templates</code></li>
         </ul>
       </li>
       <li>
@@ -38,7 +38,7 @@
         <ul>
           <li>Description: The file system path to the directory containing pages that will be rendered using the
             provided templates.</li>
-          <li>Example: <code>--pages ./path/to/pages</code></li>
+          <li>Example: <code>--pages path/to/pages</code></li>
         </ul>
       </li>
       <li>
@@ -46,7 +46,7 @@
         <ul>
           <li>Description: The output directory for the generated site. If the specified directory does not exist, it
             will be created.</li>
-          <li>Example: <code>--output ./dist</code></li>
+          <li>Example: <code>--output path/to/dist</code></li>
         </ul>
       </li>
       <li>
@@ -68,7 +68,7 @@
         <ul>
           <li>Description: Run the CLI in dry-run mode. This displays information about generated documents and their
             content without actually writing files to the output directory.</li>
-          <li>Example: <code>coralite -t ./templates -p ./pages -o ./dist --dry-run</code></li>
+          <li>Example: <code>coralite -t src/templates -p src/pages -o dist --dry-run</code></li>
         </ul>
       </li>
     </ul>
@@ -77,11 +77,11 @@
 
     <p><strong>1. Generate a site with default options:</strong></p>
 
-    <coralite-code language="bash">coralite -t ./templates -p ./pages -o ./dist</coralite-code>
+    <coralite-code language="bash">coralite -t src/templates -p src/pages -o dist</coralite-code>
 
     <p><strong>2. Ignore specific elements during parsing and run in dry-run mode:</strong></p>
 
-    <coralite-code language="bash">coralite -t ./templates -p ./pages -o ./dist --ignore-attribute data-ignore=true class=test-only --dry-run</coralite-code>
+    <coralite-code language="bash">coralite -t src/templates -p src/pages -o dist --ignore-attribute data-ignore=true class=test-only --dry-run</coralite-code>
 
     <h2>Technical Details</h2>
     <p>Under the hood, the Coralite CLI does the following:</p>
@@ -90,7 +90,7 @@
       <li>Validates and processes provided options (e.g., splits ignore attribute key-value pairs).</li>
       <li>Calls the core <code>coralite</code> function with the parsed options.</li>
       <li>Based on the <code>--dry-run</code> option, either displays generated document information or writes rendered HTML files to the specified output directory.</li>
-      </ol>
+    </ol>
   </main>
   <coralite-footer></coralite-footer>
   <coralite-hot-reload></coralite-hot-reload>
