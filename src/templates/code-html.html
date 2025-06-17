@@ -58,7 +58,8 @@
     comment.children.push(
       createCodeNode('html-comment', comment, '<!--'),
       createCodeNode('html-comment', comment, node.data),
-      createCodeNode('html-comment', comment, '-->')
+      createCodeNode('html-comment', comment, '-->'),
+      createCodeNode('', comment, '\n')
     )
 
     return comment
