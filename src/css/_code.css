@@ -128,11 +128,13 @@
   color: light-dark(var(--code-blue-light), var(--code-blue-dark));
 }
 
+/* stylelint-disable */
 .code-built_in,
 .code-title.class_,
 .code-class .code-title {
   color: light-dark(var(--code-orange-light), var(--code-orange-dark));
 }
+/* stylelint-enable */
 
 .code-emphasis {
   font-style: italic;
