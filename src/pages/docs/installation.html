@@ -14,18 +14,7 @@
 
     <p>After <a href="https://docs.npmjs.com/cli/v6/commands/npm-init" target="_blank">initialising</a> your project, install coralite as a dev dependency:</p>
 
-    <coralite-code language="bash">npm install coralite</coralite-code>
-
-    <h2>Required Options</h2>
-
-    <ul>
-      <li>-t or --templates: The path to your templates directory containing reusable UI elements (e.g., -t src/templates).</li>
-      <li>-p or --pages: The path to your pages directory where static HTML files reside (e.g., -p src/pages).</li>
-      <li>-o or --output: The output directory for the generated site (e.g., --output dist).</li>
-      <li>-d or --dry-run: This optional option outputs the document result in the console and does not save the file to disk, useful for testing.</li>
-    </ul>
-
-    <h2>Optional Options</h2>
+    <coralite-code-highlight language="bash">npm install coralite</coralite-code-highlight>
 
     <h2 id="build-script">Build script</h2>
 
@@ -33,7 +22,9 @@
 
     <p>Here is an example of what your <code>package.json</code> file should look like</p>
 
-    <coralite-code-highlight language="json">{
+    <p>For more information about the CLI options check out the <a href="/docs/coralite-cli.html">CLI reference page</a></p>
+
+    <coralite-code-highlight language="JSON">{
   "name": "my-coralite-site",
   "scripts": {
     "build": "coralite -t src/templates -p src/pages -o dist"
@@ -54,11 +45,11 @@
 
     <p>Set the command flag after running node:</p>
 
-    <coralite-code language="bash">node --experimental-vm-modules coralite</coralite-code>
+    <coralite-code-highlight language="bash">node --experimental-vm-modules coralite</coralite-code-highlight>
 
     <p>Or set flag via environment variable. If you are running Windows, use <a href="https://github.com/kentcdodds/cross-env" target="_blank">cross-env</a> to be able to set environment variables, otherwise use the following:</p>
 
-    <coralite-code language="bash">NODE_OPTIONS="--experimental-vm-modules" coralite</coralite-code>
+    <coralite-code-highlight language="bash">NODE_OPTIONS="--experimental-vm-modules" coralite</coralite-code-highlight>
 
     <h2>Resolve relative modules</h2>
 
