@@ -16,6 +16,10 @@
 .table-responsive {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+
+  .table {
+    min-width: 960px;
+  }
 }
 
 tbody,
