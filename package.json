@@ -43,5 +43,8 @@
     "postcss-merge-queries": "^1.0.3",
     "stylelint": "^16.20.0",
     "stylelint-config-twbs-bootstrap": "^15.1.0"
+  },
+  "dependencies": {
+    "coralite-plugin-aggregation": "^0.1.0"
   }
 }
