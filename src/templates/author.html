@@ -1,0 +1,64 @@
+<template id="coralite-author">
+  <div class="post-author">
+    <a href="{{ url }}" target="_blank">
+      {{ img }}
+      <span>{{ name }}</span>
+    </a> - 
+    <time datetime="{{ date-time }}">{{ localeDate }}</time>
+  </div>
+</template>
+
+<script type="module">
+  import { defineComponent, values } from 'coralite'
+
+  const authors = {
+    thomas: {
+      url: 'https://thomasjackdavid.com',
+      img: {
+        avif: '/assets/images/thomas-avatar.avif',
+        webp: '/assets/images/thomas-avatar.webp',
+        default: '/assets/images/thomas-avatar.png'
+      },
+      name: 'Thomas David'
+    }
+  }
+
+  const author = authors[values.id] || {}
+
+  export default defineComponent({
+    tokens: {
+      url () {
+        return author.url
+      },
+      img () {
+        let picture = '<picture>'
+
+        if (author.img.avif) {
+          picture += `<source srcset="${author.img.avif}" type="image/avif">`
+        }
+        
+        if (author.img.avif) {
+          picture += `<source srcset="${author.img.avif}" type="image/avif">`
+        }
+
+        if (!author.img.default) {
+          throw new Error('Author image expects a default image')
+        }
+
+        picture += `<img class="post-author-img" src="${author.img.default}" alt="Photo of author"></picture>`
+
+        return picture
+      },
+      name () {
+        return author.name
+      },
+      localeDate (values) {
+        return new Date(values.dateTime).toLocaleDateString('en-AU', {
+          year: '2-digit',
+          month: 'short',
+          day: 'numeric',
+        })
+      }
+    }
+  })
+</script>
