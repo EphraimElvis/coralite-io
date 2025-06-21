@@ -1,0 +1,13 @@
+.post > p:first-of-type, .post > img:first-child + p {
+  font-size: 133.333333%;
+}
+
+.post-author, .post-author a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacer-1);
+}
+
+.post-author-img {
+  border-radius: 50%;
+}
