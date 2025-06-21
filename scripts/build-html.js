@@ -1,7 +1,5 @@
 import Coralite from 'coralite'
-import { existsSync } from 'node:fs'
-import { writeFile, mkdir } from 'node:fs/promises'
-import { join } from 'node:path'
+import aggregation from 'coralite-plugin-aggregation'
 
 /**
  * Builds HTML files from Coralite templates and pages.
@@ -14,7 +12,8 @@ import { join } from 'node:path'
 export async function buildHTML ({ pages, templates, output }) {
   const coralite = new Coralite({
     templates,
-    pages
+    pages,
+    plugins: [aggregation]
   })
 
   const document = await coralite.compile()
