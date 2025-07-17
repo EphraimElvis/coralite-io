@@ -15,6 +15,7 @@ export async function buildHTML ({ pages, templates, output }) {
     pages,
     plugins: [aggregation]
   })
+  await coralite.initialise()
 
   const document = await coralite.compile()
 
