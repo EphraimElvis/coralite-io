@@ -29,7 +29,7 @@
     "@stylistic/eslint-plugin-js": "^4.4.1",
     "@stylistic/eslint-plugin-plus": "^4.4.1",
     "chokidar": "^4.0.3",
-    "coralite": "^0.11.4",
+    "coralite": "^0.12.0",
     "eslint": "^9.29.0",
     "highlight.js": "^11.11.1",
     "hyper-express": "^6.17.3",
@@ -45,6 +45,6 @@
     "stylelint-config-twbs-bootstrap": "^15.1.0"
   },
   "dependencies": {
-    "coralite-plugin-aggregation": "^0.1.2"
+    "coralite-plugin-aggregation": "^0.2.0"
   }
 }

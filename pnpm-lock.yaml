@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       coralite-plugin-aggregation:
-        specifier: ^0.1.2
-        version: 0.1.2(coralite@0.11.4)
+        specifier: ^0.2.0
+        version: 0.2.0(coralite@0.12.0)
     devDependencies:
       '@stylistic/eslint-plugin-js':
         specifier: ^4.4.1
@@ -22,8 +22,8 @@ importers:
         specifier: ^4.0.3
         version: 4.0.3
       coralite:
-        specifier: ^0.11.4
-        version: 0.11.4
+        specifier: ^0.12.0
+        version: 0.12.0
       eslint:
         specifier: ^9.29.0
         version: 9.29.0
@@ -334,13 +334,13 @@ packages:
     resolution: {integrity: sha512-9Kr/j4O16ISv8zBBhJoi4bXOYNTkFLOqSL3UDB0njXxCXNezjeyVrJyGOWtgfs/q2km1gwBcfH8q1yEGoMYunA==}
     engines: {node: '>=18'}
 
-  coralite-plugin-aggregation@0.1.2:
-    resolution: {integrity: sha512-K890nqb1s6puIJKoj1ff9m91LJz9nnNIQx5YQm4/v4s10CuyCRijA6SVfkKeF2xkDGVLuX85mvJg0wMImafL4A==}
+  coralite-plugin-aggregation@0.2.0:
+    resolution: {integrity: sha512-izFLfEn1DvWLI2vZzKK/bS0G13DmFakNTMPgEo4MPgpI/HQx2GLwKAAuU6tba2vBQHF9F7KoFw02mJbg7gpWEA==}
     peerDependencies:
-      coralite: ^0.11.2
+      coralite: ^0.12.0
 
-  coralite@0.11.4:
-    resolution: {integrity: sha512-wlztvBh1tbt7LQEZfJ+AAz0gxmuXO/sQ1e1QZ4lUkIMxv5S4POxee7dbchXvIDMwkiDtJNtcqL31yYZ2yadV8Q==}
+  coralite@0.12.0:
+    resolution: {integrity: sha512-+9/RN1I/0GSAakaZPHAs9Hii0l7cVhYbzADeS8hohi0wgeeWexo3uRPbEl5MeJKf/9T8p6WOGKVELAw8YQ8uFg==}
     engines: {node: '>=18.19.0'}
     hasBin: true
 
@@ -1474,13 +1474,13 @@ snapshots:
 
   cookie@1.0.2: {}
 
-  coralite-plugin-aggregation@0.1.2(coralite@0.11.4):
+  coralite-plugin-aggregation@0.2.0(coralite@0.12.0):
     dependencies:
-      coralite: 0.11.4
+      coralite: 0.12.0
       dom-serializer: 2.0.0
       htmlparser2: 10.0.0
 
-  coralite@0.11.4:
+  coralite@0.12.0:
     dependencies:
       commander: 13.1.0
       dom-serializer: 2.0.0
