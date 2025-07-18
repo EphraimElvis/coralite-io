@@ -9,6 +9,7 @@
   <meta name="description" content="{{ description }}">
 
   <!-- OG metadata -->
+  <meta property="og:type" content="{{ ogType }}">
   <meta property="og:title" content="{{ title }}">
   <meta property="og:description" content="{{ description }}">
   <meta property="og:image" content="https://coralite.io/assets/images/social.png">
@@ -23,6 +24,9 @@
 
   export default defineComponent({
     tokens: {
+      ogType (values) {
+        return values.type || "website"
+      },
       canonical (values) {
         let result = 'https://coralite.io'
 
