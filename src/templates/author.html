@@ -2,7 +2,7 @@
   <div class="post-author">
     <a href="{{ url }}" target="_blank">
       {{ img }}
-      <span>{{ name }}</span>
+      <span>{{ fullName }}</span>
     </a> - 
     <time datetime="{{ date-time }}">{{ localeDate }}</time>
   </div>
@@ -24,14 +24,21 @@
     }
   }
 
-  const author = authors[values.id] || {}
+  const author = authors[values.name]
 
   export default defineComponent({
     tokens: {
       url () {
+        if (!author) {
+          return ""
+        }
         return author.url
       },
       img () {
+        if (!author) {
+          return ""
+        }
+
         let picture = '<picture>'
 
         if (author.img.avif) {
@@ -50,7 +57,11 @@
 
         return picture
       },
-      name () {
+      fullName () {
+        if (!author) {
+          return ""
+        }
+        
         return author.name
       },
       localeDate (values) {
