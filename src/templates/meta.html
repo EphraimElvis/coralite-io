@@ -5,13 +5,15 @@
   <link href="/css/styles.css" rel="stylesheet">
   <link rel="canonical" href="{{ canonical }}">
 
-  <meta name="title" content="{{ title }}">
-  <meta name="description" content="{{ description }}">
+  <meta name="pageTitle" content="{{ title }}" data-dev="true">
+  <meta name="pageDescription" content="{{ description }}" data-dev="true">
+  <meta name="title" content="{{ metaSeoTitle }}">
+  <meta name="description" content="{{ metaSeoDescription }}">
 
   <!-- OG metadata -->
   <meta property="og:type" content="{{ ogType }}">
-  <meta property="og:title" content="{{ title }}">
-  <meta property="og:description" content="{{ description }}">
+  <meta property="og:title" content="{{ metaSeoTitle }}">
+  <meta property="og:description" content="{{ metaSeoDescription }}">
   <meta property="og:image" content="https://coralite.io/assets/images/social.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -26,6 +28,12 @@
     tokens: {
       ogType (values) {
         return values.type || "website"
+      },
+      metaSeoTitle (values) {
+        return values.seoTitle || values.title
+      },
+      metaSeoDescription (values) {
+        return values.seoDescription || values.description
       },
       canonical (values) {
         let result = 'https://coralite.io'
