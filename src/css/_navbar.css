@@ -37,6 +37,13 @@
   }
 }
 
+.offcanvas:popover-open {
+  .nav-link {
+    color: var(--primary);
+    text-decoration-color: var(--secondary);
+  }
+}
+
 .nav-icon {
   display: inline-flex;
   align-items: center;
