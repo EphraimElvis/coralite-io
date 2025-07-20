@@ -7,6 +7,12 @@
   <coralite-navbar></coralite-navbar>
   <main id="content">
     <section class="hero text-center">
+       <picture>
+        <source media="(max-width: 420px)" srcset="/assets/images/hero-background-sm.avif">
+        <source media="(min-width: 421px)" srcset="/assets/images/hero-background-md.avif">
+        <img class="hero-bg" src="/assets/images/hero-background-md.avif" alt="Water" fetchpriority="high">
+      </picture>
+
       <div class="hero-container">
         <h1 class="hero-title">Build for the Web, With the Web</h1>
         
