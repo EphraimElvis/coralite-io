@@ -1,10 +1,41 @@
 <template id="coralite-meta">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/assets/favicon.ico">
-  <link href="/css/styles.css" rel="stylesheet">
   <link rel="canonical" href="{{ canonical }}">
 
+  <!-- styles -->
+  <style>
+    @import url("/css/_variables.css");
+
+    /* components */
+    @import url("/css/_base.css");
+    @import url("/css/_input.css");
+    @import url("/css/_text.css");
+    @import url("/css/_layout.css");
+    @import url("/css/_navbar.css");
+    @import url("/css/_nav.css");
+    @import url("/css/_top-bar.css");
+    @import url("/css/_hero.css");
+    @import url("/css/_button.css");
+    @import url("/css/_display.css");
+    @import url("/css/_flex.css");
+    @import url("/css/_code.css");
+    @import url("/css/_spacing.css");
+    @import url("/css/_background.css");
+    @import url("/css/_content.css");
+    @import url("/css/_video.css");
+    @import url("/css/_table.css");
+    @import url("/css/_post.css");
+    @import url("/css/_offcanvas.css");
+  </style>
+  <link rel="preload" href="/css/fonts.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="stylesheet" href="/css/fonts.css" media="print" onload="this.media='all'">
+
+  <noscript>
+    <link rel="stylesheet" href="/css/fonts.css">
+  </noscript>
+
+  <!-- metadata -->
   <meta name="pageTitle" content="{{ title }}">
   <meta name="pageDescription" content="{{ description }}">
   <meta name="title" content="{{ metaSeoTitle }}">
@@ -17,6 +48,8 @@
   <meta property="og:image" content="https://coralite.io/assets/images/social.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  
+  <link rel="icon" href="/assets/favicon.ico">
 
   <title>{{ title }} | Coralite</title>
 </template>
