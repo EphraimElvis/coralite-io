@@ -3,18 +3,19 @@
 <head>
   <coralite-meta></coralite-meta>
 
-  <title>Coralite library Reference</title>
+  <title>Coralite plugin Reference</title>
   <link rel="stylesheet" href="/assets/css/styles.css" inline-css>
+
 </head>
 <body>
   <coralite-navbar></coralite-navbar>
   <main class="container content">
-    <h1>Coralite library</h1>
+    <h1>Coralite plugin</h1>
+
     <p>
-      The Coralite library is used for processing and rendering HTML documents with custom elements, templates, and plugins. It provides a structured way to manage document metadata, template paths, plugin configurations, and ignored attributes during rendering.
+      Coralite plugins are extensible modules that integrate into the Coralite framework's lifecycle, enabling developers to customize and enhance its behavior through hooks, data manipulation, and dynamic content generation.
     </p>
 
-    
     <h2>Coralite constructor</h2>
 
     <h3>Parameters</h3>
@@ -34,13 +35,13 @@
             <th scope="row">options</th>
             <td><code>Object</code></td>
             <td>Required</td>
-            <td>Configuration options for the `Coralite` constructor.</td>
+            <td>Configuration options for the `Coralite` plugin.</td>
           </tr>
           <tr>
-            <th scope="row">options.templates</th>
+            <th scope="row">options.name</th>
             <td><code>string</code></td>
             <td>Required</td>
-            <td>The absolute or relative path to the directory containing Coralite templates.</td>
+            <td>Unique identifier/name of the plugin. Used for internal referencing.</td>
           </tr>
           <tr>
             <th scope="row">options.pages</th>
@@ -64,7 +65,7 @@
       </table>
     </div>
 
-    <h3>Example useabe</h3>
+    <h3>Example</h3>
     <coralite-code-highlight language="JavaScript">const coralite = new Coralite({
   templates: './src/templates',
   pages: './src/pages',
@@ -73,7 +74,9 @@
     { name: 'data-ignore', value: 'true' },
     { name: 'aria-hidden', value: 'true' }
   ]
-});</coralite-code-highlight>
+});
+await coralite.initialise()
+</coralite-code-highlight>
 
     <h2>Coralite compile method</h2>
     <p>The compile method is used to compile and render HTML pages into final output documents. It processes page content, replaces custom elements with corresponding components, and returns compiled results along with performance metrics such as rendering duration.</p>
