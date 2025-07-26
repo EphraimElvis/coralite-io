@@ -104,7 +104,7 @@ const staticAsset = (liveAsset, assetPath) => (request, response) => {
  * @param {HyperExpress.Server} server - Web server
  */
 function routes (server) {
-  const liveAssets = new LiveDirectory(resolve('public'), {
+  const liveAssets = new LiveDirectory(resolve('assets'), {
     cache: {
       max_file_count: 250,
       max_file_size: 10000000 // 10 mb

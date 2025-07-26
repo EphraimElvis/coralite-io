@@ -21,7 +21,7 @@ const htmlPath = {
 }
 const cssPath = {
   filename: 'styles.css',
-  input: 'src/css',
+  input: 'assets/css',
   output: 'dist/css'
 }
 
@@ -32,7 +32,7 @@ await buildCSS(cssPath)
 const webserver = await server()
 
 // initialise watcher.
-const watcher = chokidar.watch(['./src', './public'])
+const watcher = chokidar.watch(['./src', './assets'])
 
 /**
  * Recompile the application when a file changes or is added,

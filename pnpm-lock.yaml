@@ -23,6 +23,9 @@ importers:
       coralite-plugin-aggregation:
         specifier: ^0.3.0
         version: 0.3.0(coralite@0.13.0)
+      coralite-plugin-inline-css:
+        specifier: ^0.3.0
+        version: 0.3.0(coralite@0.13.0)
       eslint:
         specifier: ^9.29.0
         version: 9.29.0
@@ -337,6 +340,11 @@ packages:
     resolution: {integrity: sha512-IuF7r4NGjyhXr+u0S9yVlQwKJmK88qpblMNyQyZDXtz+XpH2TCtPYmY34P3iRinanqG3F3qTQ8d1Ab5eLDx76A==}
     peerDependencies:
       coralite: ^0.13.0
+
+  coralite-plugin-inline-css@0.3.0:
+    resolution: {integrity: sha512-CNr17vmnx5gHMPTO4rXrSHss/TGqzSe6i5XdhyXFT5HncjUjBnLs8Mw8EVDmNya2F477X7vAauZU2uYXALmSXg==}
+    peerDependencies:
+      coralite: ^0.14.0
 
   coralite@0.13.0:
     resolution: {integrity: sha512-Sm5oEHFHM7BVHo49mpL5DpYeUrgSjsrRvuH05XM+75Dslxlov6l6zIdjcsKRJ61IAPh3luJUVk7y7A5KtaoLqQ==}
@@ -891,6 +899,11 @@ packages:
 
   postcss-merge-queries@1.0.3:
     resolution: {integrity: sha512-ax8RW0PZpNeVew2OQE8UcWIvhtSmV5rUVG3by2vmP7oimW+eImGgMvQa6xvAv/2lJ9PsvMHSlPhHyLSiNibm+A==}
+
+  postcss-minify@1.2.0:
+    resolution: {integrity: sha512-Cvyz+hW5eBG0okSSOGDeussQy4v9mZHRhMevP2jwADqDS1v2gfoLo94+g4fCeVYtESZKqr+ViMPv3yPkWZFmFQ==}
+    peerDependencies:
+      postcss: ^8.0
 
   postcss-reporter@7.1.0:
     resolution: {integrity: sha512-/eoEylGWyy6/DOiMP5lmFRdmDKThqgn7D6hP2dXKJI/0rJSO1ADFNngZfDzxL0YAxFvws+Rtpuji1YIHj4mySA==}
@@ -1479,6 +1492,13 @@ snapshots:
       dom-serializer: 2.0.0
       htmlparser2: 10.0.0
 
+  coralite-plugin-inline-css@0.3.0(coralite@0.13.0):
+    dependencies:
+      coralite: 0.13.0
+      postcss: 8.5.6
+      postcss-import: 16.1.1(postcss@8.5.6)
+      postcss-minify: 1.2.0(postcss@8.5.6)
+
   coralite@0.13.0:
     dependencies:
       commander: 13.1.0
@@ -1995,6 +2015,12 @@ snapshots:
   postcss-merge-queries@1.0.3:
     dependencies:
       postcss: 8.5.6
+
+  postcss-minify@1.2.0(postcss@8.5.6):
+    dependencies:
+      postcss: 8.5.6
+      postcss-selector-parser: 7.1.0
+      postcss-value-parser: 4.2.0
 
   postcss-reporter@7.1.0(postcss@8.5.6):
     dependencies:

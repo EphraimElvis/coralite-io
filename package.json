@@ -5,11 +5,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "assets": "node scripts/public.js",
+    "assets": "node scripts/assets.js",
     "build": "npm-run-all assets css html",
     "css": "npm-run-all css-lint css-compile",
-    "css-lint": "stylelint --fix src/css",
-    "css-compile": "postcss src/css -d dist/css",
+    "css-lint": "stylelint --fix assets/css",
+    "css-compile": "postcss assets/css -d dist/css",
     "html": "coralite -t src/templates -p src/pages -o dist -i 'data-dev=true'",
     "start": "node --experimental-vm-modules --experimental-import-meta-resolve scripts/start.js",
     "test": "npm-run-all css-lint css"
@@ -31,6 +31,7 @@
     "chokidar": "^4.0.3",
     "coralite": "link:../coralite",
     "coralite-plugin-aggregation": "^0.3.0",
+    "coralite-plugin-inline-css": "^0.3.0",
     "eslint": "^9.29.0",
     "highlight.js": "^11.11.1",
     "hyper-express": "^6.17.3",

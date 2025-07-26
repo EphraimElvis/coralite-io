@@ -1,5 +1,6 @@
 import Coralite from 'coralite'
 import aggregation from 'coralite-plugin-aggregation'
+import inlineCSS from 'coralite-plugin-inline-css'
 
 /**
  * Builds HTML files from Coralite templates and pages.
@@ -13,7 +14,13 @@ export async function buildHTML ({ pages, templates, output }) {
   const coralite = new Coralite({
     templates,
     pages,
-    plugins: [aggregation]
+    plugins: [
+      aggregation,
+      inlineCSS({
+        minify: true,
+        atImport: true,
+      })
+    ]
   })
   await coralite.initialise()
 
