@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <coralite-meta title="Coralite - Native Static Site Generator" description="Build with HTML Modules. Coralite is static site generator that uses native web technologies. No special syntax, build websites using standard HTML, CSS, and JavaScript."></coralite-meta>
+  <link rel="prefetch" href="/assets/images/hero-background-sm.avif" as="image" media="(max-width: 420px)">
+  <link rel="prefetch" href="/assets/images/hero-background-md.avif" as="image" media="(min-width: 421px)">
   <link rel="stylesheet" href="/assets/css/styles.css" inline-css>
 </head>
 <body>
@@ -11,7 +13,7 @@
        <picture>
         <source media="(max-width: 420px)" srcset="/assets/images/hero-background-sm.avif">
         <source media="(min-width: 421px)" srcset="/assets/images/hero-background-md.avif">
-        <img class="hero-bg" src="/assets/images/hero-background-md.avif" alt="Water" fetchpriority="high">
+        <img class="hero-bg" src="/assets/images/hero-background-md.avif" alt="" fetchpriority="high">
       </picture>
 
       <div class="hero-container">
