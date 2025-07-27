@@ -18,14 +18,14 @@ importers:
         specifier: ^4.0.3
         version: 4.0.3
       coralite:
-        specifier: link:../coralite
-        version: 0.13.0
+        specifier: ^0.14.0
+        version: 0.14.0
       coralite-plugin-aggregation:
         specifier: ^0.3.0
-        version: 0.3.0(coralite@0.13.0)
+        version: 0.3.0(coralite@0.14.0)
       coralite-plugin-inline-css:
         specifier: ^0.3.0
-        version: 0.3.0(coralite@0.13.0)
+        version: 0.3.0(coralite@0.14.0)
       eslint:
         specifier: ^9.29.0
         version: 9.29.0
@@ -346,8 +346,8 @@ packages:
     peerDependencies:
       coralite: ^0.14.0
 
-  coralite@0.13.0:
-    resolution: {integrity: sha512-Sm5oEHFHM7BVHo49mpL5DpYeUrgSjsrRvuH05XM+75Dslxlov6l6zIdjcsKRJ61IAPh3luJUVk7y7A5KtaoLqQ==}
+  coralite@0.14.0:
+    resolution: {integrity: sha512-Eyjw7rsilVHGhec0qZZTwFwMe8TaL+IHpOT/FYliqdu0vLP8SrR6MGY70bBmKSqXJ0hy3XoIwyrAj/n0aU7Vmw==}
     engines: {node: '>=18.19.0'}
     hasBin: true
 
@@ -1486,20 +1486,20 @@ snapshots:
 
   cookie@1.0.2: {}
 
-  coralite-plugin-aggregation@0.3.0(coralite@0.13.0):
+  coralite-plugin-aggregation@0.3.0(coralite@0.14.0):
     dependencies:
-      coralite: 0.13.0
+      coralite: 0.14.0
       dom-serializer: 2.0.0
       htmlparser2: 10.0.0
 
-  coralite-plugin-inline-css@0.3.0(coralite@0.13.0):
+  coralite-plugin-inline-css@0.3.0(coralite@0.14.0):
     dependencies:
-      coralite: 0.13.0
+      coralite: 0.14.0
       postcss: 8.5.6
       postcss-import: 16.1.1(postcss@8.5.6)
       postcss-minify: 1.2.0(postcss@8.5.6)
 
-  coralite@0.13.0:
+  coralite@0.14.0:
     dependencies:
       commander: 13.1.0
       dom-serializer: 2.0.0
