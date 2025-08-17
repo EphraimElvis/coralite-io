@@ -1,91 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <coralite-meta title="Coralite - Native Static Site Generator" description="Build with HTML Modules. Coralite is static site generator that uses native web technologies. No special syntax, build websites using standard HTML, CSS, and JavaScript."></coralite-meta>
-  <link rel="prefetch" href="/assets/images/hero-background-sm.avif" as="image" media="(max-width: 420px)">
-  <link rel="prefetch" href="/assets/images/hero-background-md.avif" as="image" media="(min-width: 421px)">
-  <link rel="stylesheet" href="/assets/css/styles.css" inline-css>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <title>Document</title>
 </head>
+
 <body>
-  <coralite-navbar></coralite-navbar>
-  <main id="content">
-    <section class="hero text-center">
-       <picture>
-        <source media="(max-width: 420px)" srcset="/assets/images/hero-background-sm.avif">
-        <source media="(min-width: 421px)" srcset="/assets/images/hero-background-md.avif">
-        <img class="hero-bg" src="/assets/images/hero-background-md.avif" alt="" fetchpriority="high">
-      </picture>
-
-      <div class="hero-container">
-        <h1 class="hero-title">Build for the Web, With the Web</h1>
-        
-        <div class="hero-body">
-          <p class="hero-subtitle">Build a database-free website with native HTML modules.</p>
-          <p><a href="/docs/guide" class="button button-primary">Get Started</a></p>
-          
-          <div class="d-flex gap justify-content-center">
-            <label for="install-npm" class="visibility-hidden">Install coralite commandline</label>
-            <input id="install-npm" class="input hero-input" type="text" value="npm i coralite@0.14.0" readonly onfocus="this.select()">
-            <button popovertarget="popover-copy" class="button button-secondary" aria-label="Copy code" onclick="copyInput()">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2M16 4h2a2 2 0 0 1 2 2v4m1 4H11"/><path d="m15 10l-4 4l4 4"/></g></svg>           
-            </button>
-            <div popover id="popover-copy">Copied commandline!</div>
-          </div>
-        </div>
-      </div>
-      <picture>
-        <source media="(max-width: 420px)" srcset="/assets/images/hero-border-sm.avif">
-        <source media="(min-width: 421px)" srcset="/assets/images/hero-border-lg.avif">
-        <img class="hero-border-bottom" src="/assets/images/hero-border-lg.avif" alt="Orange water painting of coral">
-      </picture>
-    </section>
-
-    <section class="container video">
-      <h2 class="text-center video-title">How does it work?</h2>
-      <img class="video-bg" src="/assets/images/bg-water.avif" alt="Water">
-      <iframe loading="lazy" class="video-player" width="560" height="315" src="https://www.youtube-nocookie.com/embed/wUWwH9QZUTs?si=jkFm2J5XQ8aLK6SM?cc_load_policy=1" title="Building Modular HTML Sites with Coralite" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </section>
-
-    <section class="container p-1 p-md-5 position-relative">
-      <h2>Features</h2>
-      <div class="grid column-md-2 gap divider">
-        <p>The core purpose of Coralite is static site generator that prioritises native web technologies. Unlike many modern frameworks that require special syntax or additional plugins, Coralite lets developers build websites using standard HTML, CSS, and JavaScript. </p>
-
-        <div class="grid column-3 gap">
-          <img class="content-img" src="/assets/images/icon-html.avif" alt="HTML" loading="lazy">
-          <img class="content-img" src="/assets/images/icon-css.avif" alt="CSS" loading="lazy">
-          <img class="content-img" src="/assets/images/icon-js.avif" alt="JavaScript" loading="lazy">
-        </div>
-      </div>
-
-      <div class="grid column-md-3 gap">
-        <div>
-          <h3>Templating</h3>
-          <p>The template system in Coralite is built around custom elements, providing a flexible foundation for creating reusable page components. What sets this template system apart is its use of standard HTML syntax - there’s no need to learn special template languages or markup formats.</p>
-        </div>
-        <div>
-          <h3>Data handling</h3>
-          <p>Coralite handles data through three main approaches: attributes, slots, and computed tokens. Attributes let you pass simple data (like text) to your templates using HTML attributes. Slots are more powerful, allowing you to pass complex HTML content into specific places in your templates. </p>
-        </div>
-        <div>
-          <h3>Aggregation</h3>
-          <p>Coralite’s aggregation system makes it easy to collect and display content from multiple web pages automatically. Rather than manually updating lists of content (like blog posts) on your website, Coralite reads basic information from each page and automatically creates organised lists or indexes using that information. It’s like having an automated assistant that keeps your website’s table of contents up to date whenever you add new content.</p>
-        </div>
-      </div>
-    </section>
-    <coralite-footer></coralite-footer>
-    <coralite-hot-reload></coralite-hot-reload>
-
-    <script>
-      function copyInput() {
-        const input = document.getElementById('install-npm')
-
-        input.select();
-        input.setSelectionRange(0, 99999); 
-
-        navigator.clipboard.writeText(input.value);
-      } 
-    </script>
-  </main>
+  <button class="btn">Sign up</button>
+  <button class="btn btn-purple">Sign up</button>
+  <button class="btn btn-green"><span class="btn-green">Sign up</span></button>
+  <coralite-hot-reload></coralite-hot-reload>
 </body>
+
 </html>
